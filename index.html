@@ -10,17 +10,20 @@
     <title>Daniel Hakim | Portfolio</title>
     <style>
       :root {
-        --bg: #0f172a;
-        --bg-soft: #111827;
-        --panel: #1f2937;
-        --panel-light: #e5e7eb;
-        --primary: #38bdf8;
-        --primary-strong: #0ea5e9;
-        --text: #e5e7eb;
-        --muted: #cbd5e1;
-        --accent: #f59e0b;
-        --border: rgba(255,255,255,0.12);
-        --shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+        --bg: #070d18;
+        --bg-alt: #0d1728;
+        --bg-panel: rgba(15, 23, 42, 0.84);
+        --panel: #111c2d;
+        --panel-soft: #18263d;
+        --panel-strong: #0b1320;
+        --primary: #7dd3fc;
+        --primary-strong: #67e8f9;
+        --text: #edf6ff;
+        --muted: #c0d1ea;
+        --accent: #f6b26b;
+        --border: rgba(148, 163, 184, 0.18);
+        --shadow: 0 25px 60px rgba(2, 6, 23, 0.52);
+        --button-text: #06131d;
       }
 
       * { box-sizing: border-box; }
@@ -28,11 +31,32 @@
       html { scroll-behavior: smooth; }
 
       body {
+        position: relative;
         margin: 0;
         font-family: Arial, sans-serif;
-        background: linear-gradient(180deg, #020817 0%, #0f172a 100%);
+        background:
+          radial-gradient(circle at top left, rgba(125, 211, 252, 0.18), transparent 30%),
+          radial-gradient(circle at bottom right, rgba(103, 232, 249, 0.14), transparent 22%),
+          linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
         color: var(--text);
         line-height: 1.6;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(rgba(255,255,255,0.02), rgba(255,255,255,0)),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.01),
+            rgba(255,255,255,0.01) 1px,
+            transparent 1px,
+            transparent 120px
+          );
+        opacity: 0.7;
       }
 
       a {
@@ -53,8 +77,8 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        background: rgba(15, 23, 42, 0.78);
-        backdrop-filter: blur(10px);
+        background: rgba(7, 13, 24, 0.72);
+        backdrop-filter: blur(12px);
         border-bottom: 1px solid var(--border);
       }
 
@@ -68,7 +92,7 @@
       .brand {
         font-size: 1.2rem;
         font-weight: 700;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.05em;
       }
 
       .nav-links {
@@ -98,6 +122,7 @@
         border-radius: 22px;
         border: 1px solid var(--border);
         box-shadow: var(--shadow);
+        object-fit: cover;
       }
 
       .tagline {
@@ -135,12 +160,12 @@
       }
 
       .button.primary {
-        background: var(--primary);
-        color: #062033;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+        color: var(--button-text);
       }
 
       .button.primary:hover {
-        background: var(--primary-strong);
+        filter: brightness(1.06);
         text-decoration: none;
       }
 
@@ -179,7 +204,7 @@
       }
 
       .card {
-        background: rgba(17, 24, 39, 0.9);
+        background: linear-gradient(180deg, rgba(18,27,43,0.96) 0%, rgba(11,16,32,0.95) 100%);
         border: 1px solid var(--border);
         border-radius: 16px;
         padding: 1.5rem;
@@ -203,7 +228,7 @@
       }
 
       .edu-item {
-        background: rgba(17, 24, 39, 0.9);
+        background: linear-gradient(180deg, rgba(18,27,43,0.96) 0%, rgba(11,16,32,0.95) 100%);
         border: 1px solid var(--border);
         border-radius: 16px;
         overflow: hidden;
@@ -213,7 +238,7 @@
 
       .edu-item:hover {
         transform: translateY(-4px);
-        border-color: rgba(56,189,248,0.5);
+        border-color: rgba(125, 211, 252, 0.55);
       }
 
       .edu-item img {
@@ -241,7 +266,7 @@
         margin-bottom: 0.55rem;
         padding: 0.25rem 0.6rem;
         border-radius: 999px;
-        background: rgba(56, 189, 248, 0.12);
+        background: rgba(125, 211, 252, 0.12);
         color: var(--primary);
         font-size: 0.72rem;
         font-weight: 700;
@@ -250,7 +275,7 @@
       }
 
       .contact-wrap {
-        background: rgba(17, 24, 39, 0.9);
+        background: linear-gradient(180deg, rgba(18,27,43,0.96) 0%, rgba(11,16,32,0.95) 100%);
         border: 1px solid var(--border);
         border-radius: 18px;
         padding: 2rem;
@@ -295,8 +320,8 @@
       }
 
       input[type="submit"] {
-        background: var(--primary);
-        color: #041827;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+        color: var(--button-text);
         font-weight: 700;
       }
 
@@ -374,7 +399,7 @@
           <div>
             <img
               class="portrait"
-              src="images/Daniel Hakim go kart edition.jpg" alt="Profile Picture"
+              src="images/Daniel Hakim go kart edition.jpg"
               alt="Daniel Hakim portrait"
             />
           </div>
@@ -431,7 +456,7 @@
               <span>💼</span>
               <h3>Professional Certificate</h3>
               <ul>
-                <li> Alteryx Foundational Micro-Credential</li>
+                <li>Alteryx Foundational Micro-Credential</li>
                 <li>Alteryx Designer Core Certification</li>
                 <li>AWS Academy Graduate - AWS Academy Cloud Data Pipeline Builder</li>
                 <li>AWS Academy Graduate - AWS Academy Cloud Foundations</li>
