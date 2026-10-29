@@ -11,7 +11,7 @@ https://akim730.github.io/portfolio
 I am Muhammad Daniel Hakim Bin Syahrulnizam, a graduate in Data Engineering from Universiti Teknologi Malaysia (UTM). I have a strong interest in web development, data analysis, and data pipeline architecture. My academic and professional journey has been shaped by a passion for technology, continuous learning, and problem-solving.
 
 ## Education
-
+- UPSR: 4A,1B
 - PT3: 7A, 3B
 - SPM: 8A, 1B
 - Foundation in Engineering, UiTM Dengkil (CGPA: 4.00)
